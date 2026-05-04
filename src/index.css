@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 24 14% 6%;
+    --foreground: 36 30% 92%;
+
+    --card: 24 12% 9%;
+    --card-foreground: 36 30% 92%;
+
+    --popover: 24 12% 9%;
+    --popover-foreground: 36 30% 92%;
+
+    --primary: 32 95% 58%;
+    --primary-foreground: 24 20% 8%;
+    --primary-glow: 38 100% 68%;
+
+    --secondary: 24 10% 14%;
+    --secondary-foreground: 36 30% 92%;
+
+    --muted: 24 8% 16%;
+    --muted-foreground: 30 12% 62%;
+
+    --accent: 32 95% 58%;
+    --accent-foreground: 24 20% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 36 30% 92%;
+
+    --border: 24 10% 18%;
+    --input: 24 10% 18%;
+    --ring: 32 95% 58%;
+
+    --whatsapp: 142 70% 49%;
+    --whatsapp-foreground: 0 0% 100%;
+
+    --radius: 1rem;
+
+    --gradient-glow: radial-gradient(circle at 50% 40%, hsl(32 95% 58% / 0.35), transparent 60%);
+    --gradient-warm: linear-gradient(135deg, hsl(32 95% 58%), hsl(20 90% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(24 14% 6%) 0%, hsl(24 16% 4%) 100%);
+    --shadow-glow: 0 20px 80px -20px hsl(32 95% 58% / 0.5);
+    --shadow-soft: 0 10px 40px -10px hsl(0 0% 0% / 0.6);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+}
+
+@layer utilities {
+  .text-gradient-warm {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-glow { background: var(--gradient-glow); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .transition-smooth { transition: var(--transition-smooth); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-fade-up { animation: fade-up 0.8s ease-out both; }
