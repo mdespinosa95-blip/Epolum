@@ -264,7 +264,7 @@ Diseñada en partes que se integran con precisión para lograr una estética lim
           <div className="mt-9">
             <WhatsAppButton size="xl">Quiero mi EpoLum</WhatsAppButton>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">Te respondemos rápido y te ayudamos sin </p>
+          <p className="mt-4 text-xs text-muted-foreground">Te respondemos rápido y te ayudamos sin compromiso</p>
         </div>
       </section>
 
