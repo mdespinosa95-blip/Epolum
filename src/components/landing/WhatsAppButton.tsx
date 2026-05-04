@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const WHATSAPP_NUMBER = "573053763515";
-const DEFAULT_MESSAGE = "¡Hola! Me interesa pedir una lámpara nocturna 3D ✨";
+const DEFAULT_MESSAGE = "Hola, quiero mi EpoLum";
 
 export const buildWhatsAppUrl = (message = DEFAULT_MESSAGE) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
